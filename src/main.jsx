@@ -18,6 +18,7 @@ function Icon({ name, size = 19 }) {
     spark: <path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z" />,
     close: <path d="M5 5 19 19M19 5 5 19" />,
     menu: <path d="M3 7h18M3 12h18M3 17h18" />,
+    download: <><path d="M12 3v12m-5-5 5 5 5-5"/><path d="M4 17v3h16v-3"/></>,
   };
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>;
 }
@@ -59,7 +60,7 @@ function Hero() {
       <h1>{owner.headline}<span>{owner.headlineAccent}</span></h1>
       <p className="hero-title-sub">{owner.englishRole}</p>
       <p className="hero-description">{owner.intro}</p>
-      <div className="hero-actions"><a href="#portfolio" className="btn btn-light">Khám phá dự án <Arrow diagonal size={17}/></a><a href="#about" className="btn btn-outline">Về tôi <Arrow size={17}/></a></div>
+      <div className="hero-actions"><a href="#portfolio" className="btn btn-light">Khám phá dự án <Arrow diagonal size={17}/></a><a href="#about" className="btn btn-outline">Về tôi <Arrow size={17}/></a><a href="/cv.html" target="_blank" rel="noopener noreferrer" className="btn btn-outline" aria-label="Xem CV và tải bản PDF">Tải CV <Icon name="download" size={17}/></a></div>
       <div className="hero-bottom-code"><span>RESEARCH • VALUE • INSIGHT</span><span>CUỘN ĐỂ KHÁM PHÁ <span className="scroll-arrow">↓</span></span></div>
     </div>
     <div className="hero-visual"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><Portrait/><div className="floating-note"><span className="note-cross">✳</span><span>Analytical mind.<br/>Thoughtful valuation.</span></div><span className="hero-vertical">DATA / SPACE / VALUE</span></div>
@@ -74,7 +75,7 @@ function About() {
     <div className="about-layout">
       <div className="about-left"><h2>Xin chào, tôi là<br/><span>{owner.shortName}.</span></h2><p className="about-description">{owner.about}</p><p className="about-description secondary">{owner.aboutExtra}</p>
         <div className="availability"><span className="pulse"/>{owner.availability}</div>
-        <div className="about-actions"><a className="btn btn-light" href="#contact">Liên hệ với tôi <Arrow diagonal size={16}/></a><a className="btn btn-outline" href="#portfolio">Xem đồ án <Arrow size={16}/></a></div>
+        <div className="about-actions"><a className="btn btn-light" href="#contact">Liên hệ với tôi <Arrow diagonal size={16}/></a><a className="btn btn-outline" href="#portfolio">Xem đồ án <Arrow size={16}/></a><a className="btn btn-outline" href="/cv.html" target="_blank" rel="noopener noreferrer">Tải CV <Icon name="download" size={16}/></a></div>
       </div>
       <div className="about-right"><div className="about-photo-shell"><Portrait mode="about"/><div className="photo-stamp">ANALYZE<br/>THE VALUE ✳</div></div>
         <div className="about-stats"><Stat icon="grid" number="05" label="Đồ án & nghiên cứu"/><Stat icon="layers" number="UEH" label="Chứng chỉ nghiệp vụ"/><Stat icon="spark" number="GIS" label="Dữ liệu không gian"/></div>
