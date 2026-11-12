@@ -112,3 +112,8 @@
 .credential-image img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border:0;transform:none;box-shadow:none;border-radius:5px}
 .credential-copy{padding:26px 30px 32px}
 @media(max-width:720px){.credential-image{padding:9px}.credential-copy{padding:22px}}
+
+/* CV CTA: keep three buttons reachable on small screens */
+.hero-actions,.about-actions{flex-wrap:wrap}
+.hero-actions .btn,.about-actions .btn{white-space:nowrap}
+@media(max-width:395px){.hero-actions .btn,.about-actions .btn{flex:0 1 auto;min-height:42px}}
