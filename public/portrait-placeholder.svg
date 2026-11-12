@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760">
+<defs><linearGradient id="b" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#5a5a61"/><stop offset=".5" stop-color="#25252b"/><stop offset="1" stop-color="#111116"/></linearGradient><radialGradient id="g" cx=".54" cy=".28" r=".6"><stop stop-color="#9c9ba1" stop-opacity=".33"/><stop offset="1" stop-color="#141417" stop-opacity="0"/></radialGradient><linearGradient id="s" x1="0" x2="1"><stop stop-color="#d7d7d9"/><stop offset="1" stop-color="#86868b"/></linearGradient></defs>
+<rect width="600" height="760" fill="url(#b)"/><rect width="600" height="760" fill="url(#g)"/>
+<path d="M84 760c12-154 65-248 161-268l55 45 56-45c98 18 148 117 162 268Z" fill="#101014" stroke="#aaaab0" stroke-opacity=".3" stroke-width="3"/>
+<path d="M243 484h114l7 88-63 81-62-81Z" fill="#a8a8ad"/><path d="m234 526 68 120-65 114-93-184ZM366 525 302 646l64 114 91-187Z" fill="#242429"/>
+<ellipse cx="300" cy="321" rx="112" ry="150" fill="url(#s)"/>
+<path d="M191 304c-5-70 25-163 112-161 75 2 117 56 108 163-24-9-40-42-50-68-38 32-87 35-161 41Z" fill="#18181e"/>
+<path d="M227 320c20-8 41-7 54 0M321 320c21-8 40-7 53 0" fill="none" stroke="#36363a" stroke-width="5" stroke-linecap="round"/><path d="m294 330-12 53h28M270 419c21 10 43 10 62 0" stroke="#55545a" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M0 680q153-80 300 0t300-1" fill="none" stroke="#fff" opacity=".08"/><text x="300" y="725" fill="#ffffff" opacity=".6" font-family="Arial,sans-serif" font-size="16" letter-spacing="6" text-anchor="middle">YOUR PHOTO HERE</text>
+</svg>
