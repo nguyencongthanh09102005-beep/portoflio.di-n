@@ -108,7 +108,7 @@ function ProjectCard({ project, onSelect }) {
   return <button className="project-card" type="button" onClick={() => onSelect(project)} aria-label={`Xem chi tiết ${project.title}`}>
     <div className="project-cover"><ProjectVisual type={project.visual} title={project.title} number={project.number}/><span className="project-cover-arrow"><Arrow diagonal size={20}/></span></div>
     <div className="project-meta"><span>{project.number} / {project.category}</span><span>{project.period}</span></div>
-    <div className="project-title-row"><div><h3>{project.title}</h3><p>{project.tagline}</p></div><Arrow diagonal size={21}/></div>
+    <div className="project-title-row"><div><h3>{project.title}</h3><p>{project.tagline}</p>{project.documents?.length ? <span className="project-docs-badge">PDF bài làm · {project.documents.length} tài liệu</span> : null}</div><Arrow diagonal size={21}/></div>
     {project.previewRows && <span className="project-excel-cta"><Icon name="grid" size={17}/> Bấm để xem bảng Excel <Arrow diagonal size={15}/></span>}
   </button>;
 }
@@ -151,6 +151,17 @@ function Modal({ project, onClose }) {
         </table></div>
         <ExcelDownload fileUrl={project.fileUrl}/>
       </div>}
+      {project.documents?.length ? <section className="project-documents" aria-label="Tài liệu bài làm">
+        <h3>Tài liệu bài làm</h3>
+        <p>Xem PDF để đọc trực tiếp trên trình duyệt hoặc Tải PDF để lưu về máy. Các PDF được xuất từ bài Word của đồ án.</p>
+        <div className="project-doc-list">{project.documents.map(file => <div className="project-doc" key={file.path}>
+          <div className="project-doc-info"><span className="project-doc-icon">PDF</span><div><strong>{file.title}</strong><small>{file.pages} trang · Tài liệu đồ án</small></div></div>
+          <div className="project-doc-actions">
+            <a href={file.path} target="_blank" rel="noopener noreferrer" aria-label={`Mở ${file.title} trong tab mới`}>Xem PDF <Arrow diagonal size={14}/></a>
+            <a href={file.path} download={file.filename} aria-label={`Tải ${file.title}`}>Tải PDF <Icon name="download" size={14}/></a>
+          </div>
+        </div>)}</div>
+      </section> : null}
       <p className="unpublished">{project.previewRows ? 'Bản xem nhanh không thay thế file Excel gốc và không tự điều chỉnh kết quả tính.' : 'Hình minh họa trên thẻ là mockup trình bày, không phải ảnh chụp báo cáo hoặc kết quả nghiên cứu thực tế.'}</p>
     </div>
   </div></div>;

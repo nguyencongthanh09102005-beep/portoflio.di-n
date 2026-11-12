@@ -64,3 +64,14 @@ Có thể triển khai lên Vercel bằng cách kết nối repository với c�
 - Output directory: `dist`
 
 **Trạng thái mã nguồn:** Website đang nằm ở nhánh `feature/uxui-portfolio-dark-20261112` trong [Pull Request #1](https://github.com/nguyencongthanh09102005-beep/portoflio.di-n/pull/1). Nhánh `main` chỉ có đầy đủ mã nguồn sau khi Pull Request được merge.
+
+## Tài liệu bài làm
+
+Trong phần **Dự án**, mở thẻ **Campus Central** hoặc **Live Space Studio** để xem hoặc tải các PDF được xuất từ file Word người dùng đã cung cấp.
+
+- `public/documents/Campus_Central_Bao_cao.pdf`: báo cáo Campus Central (38 trang).
+- `public/documents/LiveSpace_Bao_cao_kha_thi.pdf`: báo cáo khả thi (19 trang).
+- `public/documents/LiveSpace_Bao_cao_thuyet_minh.pdf`: báo cáo thuyết minh (51 trang).
+- `public/documents/LiveSpace_Thiet_ke_co_so.pdf`: thiết kế cơ sở và bản vẽ (12 trang).
+
+Đây là bài làm học tập, không phải bằng chứng các dự án đã được đầu tư xây dựng thực tế. Khi đăng công khai, nên rà soát số sinh viên và thông tin thành viên nhóm, địa chỉ, chữ ký, dữ liệu nội bộ.

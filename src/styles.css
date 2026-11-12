@@ -142,3 +142,19 @@
 .excel-download{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
 .excel-file-pending{padding:12px 14px;border-radius:9px;background:#19342d;border:1px solid #386f5c;color:#cde5d7}
 @media(max-width:720px){.excel-scene{inset:19% 7% 17%}.excel-scene-grid{font-size:8px}.excel-scene-grid span,.excel-scene-grid b{padding:7px 5px}.excel-preview-section{margin-top:14px}}
+
+/* Project documents: desktop + mobile responsive viewer and download */
+.project-docs-badge{display:inline-flex;margin-top:12px;border:1px solid #ba9ad34e;background:#c19cda16;border-radius:999px;padding:7px 10px;color:#dbc4eb;font-size:10px;font-weight:600}
+.project-documents{margin-top:28px;border-top:1px solid #ffffff20;padding-top:20px}
+.project-documents h3{margin-top:2px!important;font-size:17px!important}
+.project-documents>p{color:#aaa5b5;font-size:12px;line-height:1.75}
+.project-doc-list{display:grid;gap:10px;margin-top:15px}
+.project-doc{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#23212a;border:1px solid #ffffff19;border-radius:13px;padding:14px}
+.project-doc-info{display:flex;align-items:center;gap:12px;min-width:0}
+.project-doc-icon{flex:0 0 auto;border-radius:8px;background:#4a3340;color:#f4cad1;padding:10px 8px;font-size:10px;font-weight:800;letter-spacing:.6px}
+.project-doc-info strong{display:block;color:#e9e2ed;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+.project-doc-info small{display:block;color:#9994a4;font-size:10px;margin-top:5px}
+.project-doc-actions{display:flex;gap:7px;flex-shrink:0}
+.project-doc-actions a{display:inline-flex;align-items:center;justify-content:center;gap:5px;color:#f3eaf8;font-size:11px;font-weight:700;padding:10px 11px;border-radius:8px;border:1px solid #ffffff30;white-space:nowrap;transition:background .2s,border-color .2s}
+.project-doc-actions a:hover,.project-doc-actions a:focus-visible{background:#44374f;border-color:#dbc2f0}
+@media(max-width:600px){.project-doc{flex-direction:column;align-items:stretch}.project-doc-actions{width:100%}.project-doc-actions a{flex:1;min-height:42px}}

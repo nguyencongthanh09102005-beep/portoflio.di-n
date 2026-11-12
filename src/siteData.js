@@ -45,6 +45,7 @@ export const projects = [
     challenge: 'Đánh giá tính phù hợp của mô hình co-living với nhu cầu lưu trú, tiện ích và hoạt động thương mại gần khu đại học.',
     approach: 'Phân tích phân khúc khách hàng, nghiên cứu thị trường, xây dựng định hướng vận hành và mô hình tài chính dự án.',
     stack: ['Phân tích thị trường', 'Kế hoạch kinh doanh', 'Mô hình tài chính'],
+    documents: [{ title: 'Báo cáo kết thúc môn học — Campus Central', pages: 38, path: '/documents/Campus_Central_Bao_cao.pdf', filename: 'Campus_Central_Bao_cao.pdf' }],
     visual: 'campus', url: '',
   },
   {
@@ -65,6 +66,11 @@ export const projects = [
     challenge: 'Đánh giá nhu cầu sử dụng không gian chuyên dụng và khả năng tổ chức mô hình cho thuê.',
     approach: 'Xây dựng thuyết minh dự án, phân tích các yếu tố thị trường và lập giả định tài chính phục vụ đánh giá tính khả thi.',
     stack: ['Feasibility Study', 'Cash Flow', 'Market Analysis'],
+    documents: [
+      { title: 'Báo cáo khả thi', pages: 19, path: '/documents/LiveSpace_Bao_cao_kha_thi.pdf', filename: 'LiveSpace_Bao_cao_kha_thi.pdf' },
+      { title: 'Báo cáo thuyết minh dự án', pages: 51, path: '/documents/LiveSpace_Bao_cao_thuyet_minh.pdf', filename: 'LiveSpace_Bao_cao_thuyet_minh.pdf' },
+      { title: 'Thiết kế cơ sở và bản vẽ', pages: 12, path: '/documents/LiveSpace_Thiet_ke_co_so.pdf', filename: 'LiveSpace_Thiet_ke_co_so.pdf' },
+    ],
     visual: 'studio', url: '',
   },
   {
