@@ -16,6 +16,10 @@ Website trình bày hồ sơ học tập, năng lực chuyên môn, đồ án v�
 
 > Các đồ án được trình bày dưới dạng hoạt động học tập/nghiên cứu; ảnh minh họa đồ án không được xem là kết quả dự án thực tế.
 
+## File bảng tính Excel
+
+Trong mục **Dự án** có bảng thực hành **So sánh thẩm định giá máy xúc SUMITOMO**. Nhấn thẻ dự án để xem trước các tiêu chí so sánh, hoặc tải nguyên bản Excel tại `public/Bang_so_sanh_tham_dinh_gia_may_xuc.xlsx` (sheet `PP-SS`; giữ nguyên công thức và định dạng gốc).
+
 ## Công nghệ
 
 **React 19 · Vite 7 · CSS responsive**
