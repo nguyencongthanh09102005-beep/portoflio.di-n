@@ -78,7 +78,7 @@ function About() {
         <div className="about-actions"><a className="btn btn-light" href="#contact">Liên hệ với tôi <Arrow diagonal size={16}/></a><a className="btn btn-outline" href="#portfolio">Xem đồ án <Arrow size={16}/></a><a className="btn btn-outline" href="/CV_Nguyen_Thi_Thuy_Duyen.pdf" download="CV_Nguyen_Thi_Thuy_Duyen.pdf">Tải CV <Icon name="download" size={16}/></a></div>
       </div>
       <div className="about-right"><div className="about-photo-shell"><Portrait mode="about"/><div className="photo-stamp">ANALYZE<br/>THE VALUE ✳</div></div>
-        <div className="about-stats"><Stat icon="grid" number="05" label="Đồ án & nghiên cứu"/><Stat icon="layers" number="UEH" label="Chứng chỉ nghiệp vụ"/><Stat icon="spark" number="GIS" label="Dữ liệu không gian"/></div>
+        <div className="about-stats"><Stat icon="grid" number="06" label="Đồ án & nghiên cứu"/><Stat icon="layers" number="UEH" label="Chứng chỉ nghiệp vụ"/><Stat icon="spark" number="GIS" label="Dữ liệu không gian"/></div>
       </div>
     </div>
     <div className="education-wrap"><div><SectionLabel>HỌC VẤN & ĐÀO TẠO</SectionLabel><h3>Learning with <span>purpose.</span></h3></div><div className="education-list">{educations.map(edu => <div key={edu.school} className="education-item"><div><strong>{edu.school}</strong><p>{edu.qualification}</p><small>{edu.note}</small></div><span>{edu.period}</span></div>)}</div></div>
@@ -92,6 +92,14 @@ function ProjectVisual({ type, title, number }) {
     {type === 'market' && <div className="market-scene"><div className="market-axis"><span>PRICE INDEX</span><span>MARKET TREND</span></div><div className="market-bars">{[35,62,48,71,51,76,66,94,74,87,99,80].map((v,i)=><i key={i} style={{height:`${v}%`}}/>)}</div><div className="market-line"/><div className="market-stat">DATA → INSIGHT</div></div>}
     {type === 'studio' && <div className="studio-scene"><span className="studio-orbit one"/><span className="studio-orbit two"/><span className="studio-play">▶</span><span className="studio-label">LIVE SPACE<br/>STUDIO</span></div>}
     {type === 'gis' && <div className="gis-scene"><div className="gis-map"><span className="gis-road one"/><span className="gis-road two"/><span className="gis-road three"/><span className="gis-pin">●</span><span className="gis-lot">LOT / 024</span></div><div className="gis-coords">10°49' N <br/>106°43' E</div></div>}
+    {type === 'excel' && <div className="excel-scene" aria-hidden="true">
+      <div className="excel-scene-title"><span>XL</span><strong>VALUATION / PP-SS</strong><small>.XLSX</small></div>
+      <div className="excel-scene-grid"><b>YẾU TỐ</b><b>SS1</b><b>SS2</b><b>SS3</b>
+        <span>Năm SX</span><span>86–89</span><span>90–93</span><span>96–99</span>
+        <span>Trọng lượng</span><span>12.000</span><span>12.000</span><span>12.500</span>
+        <span>Giá chỉ dẫn</span><span>630</span><span>634</span><span>633</span>
+      </div>
+    </div>}
     {type === 'field' && <div className="field-scene"><div className="field-sun"/><div className="field-mountain back"/><div className="field-mountain front"/><div className="field-coordinate">NINH THUẬN<br/>FIELD NOTES</div></div>}
     <div className="visual-caption"><span>{title}</span><b>VIEW CASE STUDY <Arrow diagonal size={14}/></b></div>
   </div>;
@@ -101,7 +109,24 @@ function ProjectCard({ project, onSelect }) {
     <div className="project-cover"><ProjectVisual type={project.visual} title={project.title} number={project.number}/><span className="project-cover-arrow"><Arrow diagonal size={20}/></span></div>
     <div className="project-meta"><span>{project.number} / {project.category}</span><span>{project.period}</span></div>
     <div className="project-title-row"><div><h3>{project.title}</h3><p>{project.tagline}</p></div><Arrow diagonal size={21}/></div>
+    {project.previewRows && <span className="project-excel-cta"><Icon name="grid" size={17}/> Bấm để xem bảng Excel <Arrow diagonal size={15}/></span>}
   </button>;
+}
+function ExcelDownload({ fileUrl }) {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    if (!fileUrl) return undefined;
+    const controller = new AbortController();
+    fetch(fileUrl, { method: 'HEAD', signal: controller.signal })
+      .then(response => {
+        const type = response.headers.get('content-type') || '';
+        setReady(response.ok && /spreadsheetml|octet-stream/i.test(type));
+      }).catch(() => setReady(false));
+    return () => controller.abort();
+  }, [fileUrl]);
+  return ready
+    ? <a className="btn btn-light excel-download" href={fileUrl} download="Bang_so_sanh_tham_dinh_gia_may_xuc.xlsx"><Icon name="download" size={17}/> Tải file Excel gốc (.xlsx)</a>
+    : <p className="excel-file-pending">Bản xem nhanh đã sẵn sàng. File Excel gốc đang chờ được đưa vào thư mục public của website.</p>;
 }
 function Modal({ project, onClose }) {
   useEffect(() => {
@@ -119,7 +144,14 @@ function Modal({ project, onClose }) {
     <div className="modal-content"><SectionLabel>DỰ ÁN / {project.number}</SectionLabel><h2 id="modal-title">{project.title}</h2><p className="modal-tagline">{project.description}</p>
       <div className="modal-facts"><div><span>HÌNH THỨC</span><strong>{project.category}</strong></div><div><span>ĐỊA ĐIỂM</span><strong>{project.period}</strong></div><div><span>VAI TRÒ</span><strong>Đồ án / Thực hành</strong></div></div>
       <h3>Vấn đề nghiên cứu</h3><p>{project.challenge}</p><h3>Phương pháp thực hiện</h3><p>{project.approach}</p><div className="tag-row">{project.stack.map(tag => <span key={tag}>{tag}</span>)}</div>
-      <p className="unpublished">Hình minh họa trên thẻ là mockup trình bày, không phải ảnh chụp báo cáo hoặc kết quả nghiên cứu thực tế.</p>
+      {project.previewRows && <div className="excel-preview-section"><h3>Xem nhanh bảng so sánh</h3>
+        <p>Trích một số hàng từ sheet PP-SS trong file bạn cung cấp. Bảng gốc có các công thức điều chỉnh và phần kết luận chi tiết.</p>
+        <div className="excel-preview-scroll"><table className="excel-preview-table"><thead><tr><th>Yếu tố so sánh</th><th>Máy xúc thẩm định</th><th>So sánh 1</th><th>So sánh 2</th><th>So sánh 3</th></tr></thead>
+          <tbody>{project.previewRows.map(row => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th key={index} scope="row">{cell}</th> : <td key={index}>{cell}</td>)}</tr>)}</tbody>
+        </table></div>
+        <ExcelDownload fileUrl={project.fileUrl}/>
+      </div>}
+      <p className="unpublished">{project.previewRows ? 'Bản xem nhanh không thay thế file Excel gốc và không tự điều chỉnh kết quả tính.' : 'Hình minh họa trên thẻ là mockup trình bày, không phải ảnh chụp báo cáo hoặc kết quả nghiên cứu thực tế.'}</p>
     </div>
   </div></div>;
 }
