@@ -1,45 +1,36 @@
-# Portfolio UX/UI — Thành
+# Nguyễn Thị Thùy Duyên — Real Estate Valuation Portfolio
 
-Portfolio dark mode lấy cảm hứng từ bố cục trong video mẫu: nền lưới tối, tiêu đề lớn, ảnh chân dung đen trắng, thanh navigation dạng pill, About, Portfolio Showcase (Projects / Certificates / Tech Stack) và Contact + Guestbook.
+Portfolio dark mode, responsive, xây dựng bằng React 19 + Vite 7. Nội dung dựa trên CV, bản giới thiệu cá nhân và ảnh được chủ hồ sơ cung cấp vào tháng 11/2026. Đây là portfolio về **thẩm định giá bất động sản**, không phải portfolio UX/UI.
 
-## Chạy trên Windows / VS Code
+## Khởi chạy trên Windows / VS Code
 
-```bash
+```powershell
 npm install
 npm run dev
 ```
 
-Mở URL mà Vite in ra (thường là `http://localhost:5173`).
+Mở URL mà Vite in trên terminal (thường `http://localhost:5173/`). Build production: `npm run build` (thư mục `dist/`).
 
-## Chỉnh nội dung
+## Nội dung đã có
 
-- `src/siteData.js`: tên, mô tả, dự án, kỹ năng, liên kết, email và chứng chỉ.
-- `src/styles.css`: màu sắc, khoảng cách, kiểu chữ, animation và responsive.
-- `src/main.jsx`: các thành phần giao diện và hành vi tương tác.
-- `public/portrait-placeholder.svg`: ảnh minh họa mặc định. Thay bằng ảnh của bạn, ví dụ chép `my-portrait.jpg` vào `public` và chỉnh `avatar: '/my-portrait.jpg'` trong `src/siteData.js`.
+- Chân dung Thùy Duyên; giới thiệu nghề nghiệp và mục tiêu phát triển.
+- 5 đồ án/nội dung thực hành: Campus Central, thị trường BĐS TP.HCM, Live Space Studio, WebGIS địa chính, khảo sát Ninh Thuận.
+- Học vấn Đại học Nông Lâm TP.HCM (2023–2027) và chứng chỉ UEH (06/2026).
+- Kỹ năng: thẩm định giá, mô hình tài chính, Excel, SPSS, RStudio, GIS và pháp lý BĐS.
+- Liên hệ bằng `mailto:`; khi nhấn gửi sẽ mở ứng dụng email của người xem, **không có backend nhận form trực tiếp**.
 
-### Lưu ý quan trọng
+## Chỉnh nội dung / ảnh
 
-- **Chứng chỉ chưa có:** tab Certificates hiển thị trạng thái rỗng. Thêm chứng chỉ thật vào mảng `certificates` khi có.
-- **Email chưa cấu hình:** biểu mẫu liên hệ sẽ sao chép nội dung vào clipboard; điền `owner.email` để nút mở email soạn sẵn cho người gửi. Để nhận tin trên server thực tế cần tích hợp form backend hay dịch vụ email sau.
-- **Guestbook:** hoạt động bằng `localStorage` trên từng trình duyệt; không phải bình luận công khai qua internet. Muốn bình luận thật cần database/backend.
-- **Ảnh trên thẻ dự án** là mockup thiết kế minh họa dựng bằng CSS, không phải screenshot đã chụp từ ứng dụng của bạn. Thay bằng ảnh thật của từng dự án khi công bố.
-- Portfolio sử dụng font Google Fonts nếu có mạng, fallback system sans-serif khi offline.
+- `src/siteData.js`: tên, bio, dự án, học vấn, chứng chỉ, kỹ năng, email, điện thoại.
+- `src/main.jsx`: bố cục và thành phần giao diện.
+- `src/styles.css`: giao diện dark grid và responsive.
+- `public/thuy-duyen-portrait.webp`: ảnh chân dung đã được nén, xóa metadata EXIF.
+- `public/ueh-certificate-heading.webp`: **chỉ là phần tiêu đề được cắt từ ảnh chứng chỉ**, không phải bản sao đầy đủ.
 
-## Build production
+**Quyền riêng tư:** Không upload bản gốc giấy chứng nhận có số CMND/CCCD, ngày sinh, địa chỉ chi tiết, hoặc CV đầy đủ chứa thông tin nhạy cảm lên website / repo công khai. Dữ liệu liên hệ công khai (`email`, `phone`) có thể xóa trong `src/siteData.js` nếu không muốn nhận liên hệ trực tiếp.
 
-```bash
-npm run build
-npm run preview
-```
+## Công bố
 
-Có thể đưa lên Vercel với framework Vite; build command `npm run build`, output directory `dist`.
+Dùng Vercel: Import Git Repository → Vite → Build Command `npm run build` → Output `dist`. Chỉ công bố khi đã kiểm tra ảnh và thông tin cá nhân.
 
-## Đưa lên GitHub / Vercel
-
-Repository: https://github.com/nguyencongthanh09102005-beep/portoflio.di-n
-
-- Sau khi chấp thuận pull request, clone về máy bằng `git clone https://github.com/nguyencongthanh09102005-beep/portoflio.di-n.git`.
-- Cài Node.js 20+ (khuyến nghị 22), chạy `npm install` rồi `npm run dev`.
-- Trên Vercel chọn Import Git Repository, Vite, Build Command `npm run build`, Output Directory `dist`.
-- Website chưa có domain riêng / email nhận tin công khai; đừng công bố email cá nhân nếu không muốn.
+Các hình bìa đồ án là **mockup minh họa**, không phải ảnh chụp kết quả thực tế. Không có liên kết giả hoặc số liệu hiệu quả tự tạo. Dự án ghi đúng là đồ án/nghiên cứu, không ngụ ý kinh nghiệm làm việc chuyên nghiệp.
