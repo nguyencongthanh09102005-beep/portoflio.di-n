@@ -94,8 +94,8 @@ export const certificates = [
     title: 'Chứng chỉ đào tạo nghiệp vụ Thẩm định giá tài sản',
     issuer: 'Đại học Kinh tế TP.HCM (UEH)',
     date: 'Tháng 6/2026',
-    image: '/ueh-certificate-heading.webp',
-    note: 'Hình trích phần tiêu đề chứng chỉ; thông tin định danh và giấy tờ cá nhân không được đăng công khai.',
+    image: '/ueh-certificate-full.webp',
+    note: 'Ảnh đầy đủ khung hình chứng chỉ gốc; ngày sinh và số giấy tờ đã được che để bảo vệ quyền riêng tư khi đăng công khai.',
   },
 ];
 

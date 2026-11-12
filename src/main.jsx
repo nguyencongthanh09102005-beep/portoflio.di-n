@@ -133,7 +133,7 @@ function Portfolio() {
     <div id="tab-panel" role="tabpanel" aria-labelledby={`tab-${tab}`}>
       {tab === 'projects' && <div className="project-grid">{projects.map(project => <ProjectCard key={project.id} project={project} onSelect={setSelected}/>)}</div>}
       {tab === 'certificates' && <div className="cert-grid">{certificates.map(cert => <article className="cert-card credential-card" key={cert.title}>
-        <div className="credential-image"><img src={cert.image} alt="Phần tiêu đề chứng chỉ đào tạo nghiệp vụ thẩm định giá tài sản" loading="lazy"/></div>
+        <div className="credential-image"><a href={cert.image} target="_blank" rel="noopener noreferrer" title="Mở ảnh toàn bộ chứng chỉ"><img src={cert.image} alt="Toàn bộ ảnh chứng chỉ đào tạo nghiệp vụ thẩm định giá tài sản UEH" loading="lazy"/></a></div>
         <div className="credential-copy"><span className="credential-eyebrow">VERIFIED TRAINING / 2026</span><h3>{cert.title}</h3><p>{cert.issuer} · {cert.date}</p><small>{cert.note}</small></div>
       </article>)}</div>}
       {tab === 'stack' && <div className="skill-grid">{skills.map((skill, i) => <div className="skill-card" key={skill.name}><div className={`skill-symbol ${skill.className}`}>{skill.abbr}</div><strong>{skill.name}</strong><span>{skill.kind}</span><span className="skill-index">{String(i + 1).padStart(2, '0')}</span></div>)}</div>}
