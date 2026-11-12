@@ -117,3 +117,28 @@
 .hero-actions,.about-actions{flex-wrap:wrap}
 .hero-actions .btn,.about-actions .btn{white-space:nowrap}
 @media(max-width:395px){.hero-actions .btn,.about-actions .btn{flex:0 1 auto;min-height:42px}}
+
+/* Excel valuation workbook preview - responsive */
+.real-excel{background:radial-gradient(circle at 65% 25%,#236b59 0,#0a2727 45%,#111a23 100%)}
+.excel-scene{position:absolute;inset:19% 10% 19%;border:1px solid #b6ebd655;background:#e7f4ed;border-radius:9px;overflow:hidden;box-shadow:0 20px 50px #020e0e77;color:#1d3831}
+.excel-scene-title{display:flex;align-items:center;gap:9px;background:#16704b;padding:9px 12px;color:#f9fff9}
+.excel-scene-title>span{font:bold 13px 'Space Grotesk',sans-serif;background:#0d5539;padding:5px 7px;border-radius:4px}
+.excel-scene-title strong{font-size:10px;letter-spacing:1px}
+.excel-scene-title small{margin-left:auto;font-size:9px;opacity:.8}
+.excel-scene-grid{display:grid;grid-template-columns:1.7fr repeat(3,1fr);font-size:10px;min-width:0}
+.excel-scene-grid span,.excel-scene-grid b{padding:10px 7px;border-right:1px solid #a3c8b5;border-bottom:1px solid #a3c8b5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.excel-scene-grid b{background:#c9e5d5;font-size:9px}
+.excel-scene-grid span:first-child{font-weight:700}
+.project-excel-cta{display:inline-flex;gap:9px;align-items:center;color:#b9f3d3;border:1px solid #7fcfae55;border-radius:999px;padding:10px 14px;margin-top:17px;font-size:11px;font-weight:700;transition:background .2s}
+.project-card:hover .project-excel-cta,.project-card:focus-visible .project-excel-cta{background:#197c5d4a}
+.excel-preview-section{margin-top:22px;padding:18px 0;border-top:1px solid #ffffff21}
+.excel-preview-section>p{color:#b2abb8;font-size:12px;line-height:1.8}
+.excel-preview-scroll{overflow:auto;border:1px solid #ffffff28;border-radius:10px;margin:16px 0 20px}
+.excel-preview-table{width:100%;border-collapse:collapse;min-width:610px;font-size:11px;color:#e9f7ef}
+.excel-preview-table th,.excel-preview-table td{border:1px solid #ffffff17;padding:13px 10px;text-align:center}
+.excel-preview-table thead th{background:#24664f;text-align:center}
+.excel-preview-table tbody th{text-align:left;background:#1e342f}
+.excel-preview-table tbody tr:nth-child(odd) td{background:#172925}
+.excel-download{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.excel-file-pending{padding:12px 14px;border-radius:9px;background:#19342d;border:1px solid #386f5c;color:#cde5d7}
+@media(max-width:720px){.excel-scene{inset:19% 7% 17%}.excel-scene-grid{font-size:8px}.excel-scene-grid span,.excel-scene-grid b{padding:7px 5px}.excel-preview-section{margin-top:14px}}
