@@ -87,6 +87,24 @@ export const projects = [
     stack: ['Khảo sát thực địa', 'Quy hoạch', 'Phân tích vị trí'],
     visual: 'field', url: '',
   },
+  {
+    id: 'machine-valuation', number: '06', title: 'Bảng so sánh thẩm định giá máy xúc',
+    tagline: 'SUMITOMO · Valuation Comparison in Excel',
+    category: 'Bài thực hành · Thẩm định giá máy móc', period: 'Bảng tính Excel',
+    description: 'Bảng so sánh máy xúc cần thẩm định với ba máy xúc tham chiếu, sử dụng phương pháp so sánh và điều chỉnh theo đặc điểm kỹ thuật.',
+    challenge: 'Đối chiếu các máy xúc có năm sản xuất, trọng lượng, sức nén của bơm và lực đào gàu xúc khác nhau.',
+    approach: 'Lập bảng Excel để tính tỷ lệ và mức điều chỉnh, tổng hợp mức giá chỉ dẫn và kết luận theo số liệu bài thực hành.',
+    stack: ['Microsoft Excel', 'Phương pháp so sánh', 'Điều chỉnh giá', 'Máy xúc SUMITOMO'],
+    visual: 'excel', url: '',
+    fileUrl: '/Bang_so_sanh_tham_dinh_gia_may_xuc.xlsx',
+    previewRows: [
+      ['Năm sản xuất', '86–89', '86–89', '90–93', '96–99'],
+      ['Trọng lượng', '12.000', '12.000', '12.000', '12.500'],
+      ['Sức nén của bơm', '300', '300', '300', '320'],
+      ['Lực đào gàu xúc', '5.900', '5.900', '6.300', '6.300'],
+      ['Mức giá chỉ dẫn', '—', '630', '634,07', '633,03'],
+    ],
+  },
 ];
 
 export const certificates = [
