@@ -1,36 +1,62 @@
-# Nguyễn Thị Thùy Duyên — Real Estate Valuation Portfolio
+# Nguyễn Thị Thùy Duyên
+### Real Estate Valuation & Investment Analysis
 
-Portfolio dark mode, responsive, xây dựng bằng React 19 + Vite 7. Nội dung dựa trên CV, bản giới thiệu cá nhân và ảnh được chủ hồ sơ cung cấp vào tháng 11/2026. Đây là portfolio về **thẩm định giá bất động sản**, không phải portfolio UX/UI.
+Portfolio cá nhân của **Nguyễn Thị Thùy Duyên**, định hướng chuyên môn **Thẩm định giá Bất động sản**, phân tích đầu tư và nghiên cứu thị trường tại TP. Hồ Chí Minh.
 
-## Khởi chạy trên Windows / VS Code
+Website trình bày hồ sơ học tập, năng lực chuyên môn, đồ án và hoạt động khảo sát thực tế trong một giao diện tối giản, hiện đại, hỗ trợ cả điện thoại lẫn máy tính.
+
+## Nội dung portfolio
+
+- **Giới thiệu:** định hướng nghề nghiệp, nền tảng phân tích tài chính, thị trường và pháp lý bất động sản.
+- **Học vấn:** Đại học Nông Lâm TP.HCM (2023–2027), chuyên ngành Bất động sản.
+- **Chứng chỉ:** Đào tạo nghiệp vụ Thẩm định giá tài sản — Đại học Kinh tế TP.HCM (UEH), 06/2026.
+- **Đồ án & nghiên cứu:** Campus Central (Eco-Smart Co-Living), phân tích thị trường BĐS TP.HCM, Live Space Studio, hệ thống WebGIS thông tin địa chính và khảo sát thực địa Ninh Thuận.
+- **Kỹ năng:** thẩm định giá, DCF/NPV/IRR, Excel, SPSS, RStudio, GIS, nghiên cứu thị trường và đánh giá pháp lý.
+- **Liên hệ:** email, số điện thoại và nút **Tải CV** sử dụng bản PDF chủ hồ sơ cung cấp.
+
+> Các đồ án được trình bày dưới dạng hoạt động học tập/nghiên cứu; ảnh minh họa đồ án không được xem là kết quả dự án thực tế.
+
+## Công nghệ
+
+**React 19 · Vite 7 · CSS responsive**
+
+## Chạy tại máy
+
+Yêu cầu cài đặt Node.js và npm.
 
 ```powershell
 npm install
 npm run dev
 ```
 
-Mở URL mà Vite in trên terminal (thường `http://localhost:5173/`). Build production: `npm run build` (thư mục `dist/`).
+Mở địa chỉ do Vite hiển thị trong terminal (thường là `http://localhost:5173/`).
 
-## Nội dung đã có
+Để kiểm tra phiên bản production:
 
-- Chân dung Thùy Duyên; giới thiệu nghề nghiệp và mục tiêu phát triển.
-- 5 đồ án/nội dung thực hành: Campus Central, thị trường BĐS TP.HCM, Live Space Studio, WebGIS địa chính, khảo sát Ninh Thuận.
-- Học vấn Đại học Nông Lâm TP.HCM (2023–2027) và chứng chỉ UEH (06/2026).
-- Kỹ năng: thẩm định giá, mô hình tài chính, Excel, SPSS, RStudio, GIS và pháp lý BĐS.
-- Liên hệ bằng `mailto:`; khi nhấn gửi sẽ mở ứng dụng email của người xem, **không có backend nhận form trực tiếp**.
+```powershell
+npm run build
+npm run preview
+```
 
-## Chỉnh nội dung / ảnh
+## Cấu trúc quan trọng
 
-- `src/siteData.js`: tên, bio, dự án, học vấn, chứng chỉ, kỹ năng, email, điện thoại.
-- `src/main.jsx`: bố cục và thành phần giao diện.
-- `src/styles.css`: giao diện dark grid và responsive.
-- `public/thuy-duyen-portrait.webp`: ảnh chân dung đã được nén, xóa metadata EXIF.
-- `public/ueh-certificate-heading.webp`: **chỉ là phần tiêu đề được cắt từ ảnh chứng chỉ**, không phải bản sao đầy đủ.
+| Đường dẫn | Chức năng |
+| --- | --- |
+| `src/siteData.js` | Nội dung giới thiệu, dự án, chứng chỉ, kỹ năng và liên hệ |
+| `src/main.jsx` | Các thành phần giao diện |
+| `src/styles.css` | Thiết kế, hiệu ứng và responsive |
+| `public/thuy-duyen-portrait.webp` | Ảnh chân dung |
+| `public/ueh-certificate-full.webp` | Ảnh chứng chỉ hiển thị trên website |
+| `public/CV_Nguyen_Thi_Thuy_Duyen.pdf` | CV PDF được nút Tải CV sử dụng |
 
-**Quyền riêng tư:** Không upload bản gốc giấy chứng nhận có số CMND/CCCD, ngày sinh, địa chỉ chi tiết, hoặc CV đầy đủ chứa thông tin nhạy cảm lên website / repo công khai. Dữ liệu liên hệ công khai (`email`, `phone`) có thể xóa trong `src/siteData.js` nếu không muốn nhận liên hệ trực tiếp.
+**Quyền riêng tư:** Repo này đang công khai. File CV PDF và tài liệu hình ảnh có thể được tải bởi người xem; cần xác nhận quyền công khai các thông tin cá nhân trước khi triển khai website.
 
-## Công bố
+## Triển khai
 
-Dùng Vercel: Import Git Repository → Vite → Build Command `npm run build` → Output `dist`. Chỉ công bố khi đã kiểm tra ảnh và thông tin cá nhân.
+Có thể triển khai lên Vercel bằng cách kết nối repository với cấu hình:
 
-Các hình bìa đồ án là **mockup minh họa**, không phải ảnh chụp kết quả thực tế. Không có liên kết giả hoặc số liệu hiệu quả tự tạo. Dự án ghi đúng là đồ án/nghiên cứu, không ngụ ý kinh nghiệm làm việc chuyên nghiệp.
+- Framework: **Vite**
+- Build command: `npm run build`
+- Output directory: `dist`
+
+**Trạng thái mã nguồn:** Website đang nằm ở nhánh `feature/uxui-portfolio-dark-20261112` trong [Pull Request #1](https://github.com/nguyencongthanh09102005-beep/portoflio.di-n/pull/1). Nhánh `main` chỉ có đầy đủ mã nguồn sau khi Pull Request được merge.
